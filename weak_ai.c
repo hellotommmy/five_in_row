@@ -420,7 +420,8 @@ if(i<=10&&j>=4&&i>=1&&j<=13&&RecordBoard[i-1][j+1]==0&&RecordBoard[i+4][j-4]==0&
 					valueofpoint[i][j]+=500;
 				}
 				else
-				valueofpoint[i][j]==-1000;
+				    valueofpoint[i][j]-=1000;
+				//valueofpoint[i][j]==-1000;
 				
 		}
 	}

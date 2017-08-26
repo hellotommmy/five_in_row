@@ -26,7 +26,7 @@ CFLAGS = -Wall -g
 #LIBS = -lmylib -lm
 
 # define the C source files
-SRCS = display.c decide.c judge.c weak_ai.c read.c
+SRCS = display.c decide.c judge.c weak_ai.c read.c node.c queue.c pattern.c
 
 # define the C object files 
 #

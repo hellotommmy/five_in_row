@@ -11,10 +11,11 @@
 #include <stdlib.h>
 #include <string.h>
 #define BOARD_LEN 15
-#define INF 99999999
+#define INF 2147483647
 #define MAX(A,B) (A)>(B)?(A):(B)
 #define MIN(A,B) (A)<(B)?(A):(B)
 char RecordBoard[BOARD_LEN][BOARD_LEN];
+FILE *fp;
 typedef struct pos {
     int dim1;
     int dim2;
@@ -34,6 +35,7 @@ int five_in_row(pos_t * latest_position, char (*board)[]);
 //int consecutive(pos_t * latest_position, int len);
 void decide_1(void);//AI-1
 void decide_2(int player);
+void decide_3(int i, int j);
 void read_in();
 void display_any_board(char board[BOARD_LEN][BOARD_LEN]);
 void record_to_display();

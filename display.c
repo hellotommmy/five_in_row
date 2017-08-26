@@ -44,7 +44,10 @@ void display_any_board(char board[BOARD_LEN][BOARD_LEN]){
      for(i = 0; i < BOARD_LEN; i++){
         for(j = 0; j < BOARD_LEN; j++){
             if(board[i][j] == 0){
-                continue;
+                //continue;
+                temp_display_board[i][j * 6    ] = init_display_board[i][j * 6    ];
+                temp_display_board[i][j * 6 + 1] = init_display_board[i][j * 6 + 1];
+                temp_display_board[i][j * 6 + 2] = init_display_board[i][j * 6 + 2];
             }
             else if(board[i][j] == 1){
                 temp_display_board[i][j * 6    ] = Player1[0];
@@ -107,7 +110,10 @@ void record_to_display(){
      for(i = 0; i < BOARD_LEN; i++){
         for(j = 0; j < BOARD_LEN; j++){
             if(RecordBoard[i][j] == 0){
-                continue;
+                //continue;
+                display_board[i][j * 6    ] = init_display_board[i][j * 6    ];
+                display_board[i][j * 6 + 1] = init_display_board[i][j * 6 + 1];
+                display_board[i][j * 6 + 2] = init_display_board[i][j * 6 + 2];
             }
             else if(RecordBoard[i][j] == 1){
                 display_board[i][j * 6    ] = Player1[0];
@@ -134,6 +140,7 @@ void test_drawing_player(){
 */
 
 int main(){
+    fp = fopen("results.txt","w+");
     display_init_board();
     init_to_display();
     
@@ -142,8 +149,14 @@ int main(){
     sign = 1;
     //need to read in a board scenario to check if it works
     read_in();
-	record_to_display();
-	display_display_board();    
+    decide_3(x,y);
+    //TODO:test code
+            RecordBoard[x][y] = sign;    
+        	    record_to_display();
+	    display_display_board();
+/*	record_to_display();
+	display_display_board();  
+	  
     decide_2(sign);
         latest.dim1 = x;
         latest.dim2 = y;

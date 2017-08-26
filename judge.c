@@ -2,6 +2,14 @@
 int consecutive(pos_t * latest_position){
     return 0;
 }
+int leaf(node_t *node){
+//if current player has 4 + 3 and the other player has no 4
+
+    return 0;
+}
+int x_in_row(int x, int y, char board[BOARD_LEN][BOARD_LEN]){
+    return 0;
+}
 int five_in_row(pos_t * latest_position, char board[BOARD_LEN][BOARD_LEN]){
     if(horizontal_five_in_row(latest_position,board))
         return 1;
@@ -26,18 +34,18 @@ int horizontal_five_in_row(pos_t * latest_position, char board[BOARD_LEN][BOARD_
                 return 1;
         }
         else{
-            cons = 0;
+            //cons = 0;
             break;
         }
     }
-    for(i = dim2; i <= BOARD_LEN - 1; i++){
+    for(i = dim2 + 1; i <= BOARD_LEN - 1; i++){
         if(board[dim1][i] == player){
             cons++;
             if(cons == 5)
                 return 1;
         }
         else{
-            cons = 0;
+            //cons = 0;
             break;
         }
     }
@@ -56,18 +64,18 @@ int vertical_five_in_row(pos_t * latest_position, char board[BOARD_LEN][BOARD_LE
                 return 1;
         }
         else{
-            cons = 0;
+            //cons = 0;
             break;
         }
     }
-    for(i = dim1; i <= BOARD_LEN - 1; i++){
+    for(i = dim1 + 1; i <= BOARD_LEN - 1; i++){
         if(board[i][dim2] == player){
             cons++;
             if(cons == 5)
                 return 1;
         }
         else{
-            cons = 0;
+            //cons = 0;
             break;
         }
     }
@@ -86,20 +94,20 @@ int skew_left_upper_five_in_row(pos_t * latest_position, char board[BOARD_LEN][B
                 return 1;
         }
         else{
-            cons = 0;
+            //cons = 0;
             break;
         }
         i--;
         j--;
     }
-    for(i = dim1,j = dim2; i <= BOARD_LEN - 1 && j <= BOARD_LEN - 1; ){
+    for(i = dim1 + 1,j = dim2 + 1; i <= BOARD_LEN - 1 && j <= BOARD_LEN - 1; ){
         if(board[i][j]== player){
             cons++;
             if(cons == 5)
                 return 1;
         }
         else{
-            cons = 0;
+            //cons = 0;
             break;
         }
         i++;
@@ -120,20 +128,20 @@ int skew_right_upper_five_in_row(pos_t * latest_position, char board[BOARD_LEN][
                 return 1;
         }
         else{
-            cons = 0;
+            //cons = 0;
             break;
         }
         i--;
         j++;
     }
-    for(i = dim1,j = dim2; i <= BOARD_LEN - 1 && j >= 0; ){
+    for(i = dim1 + 1,j = dim2 - 1; i <= BOARD_LEN - 1 && j >= 0; ){
         if(board[i][j]== player){
             cons++;
             if(cons == 5)
                 return 1;
         }
         else{
-            cons = 0;
+            //cons = 0;
             break;
         }
         i++;
