@@ -42,8 +42,6 @@ full block
 char Player1[4] = "●";
 char Player2[4] = "○";
 
-void init_to_display();
 
-void display_init_board();
 
 #endif

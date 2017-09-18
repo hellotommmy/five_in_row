@@ -40,4 +40,8 @@ void read_in();
 void display_any_board(char board[BOARD_LEN][BOARD_LEN]);
 void record_to_display();
 void display_display_board();
+void fdisplay();
+void init_to_display();
+
+void display_init_board();
 #endif

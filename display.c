@@ -138,46 +138,20 @@ void test_drawing_player(){
     }
 }
 */
-
-int main(){
-    fp = fopen("results.txt","w+");
-    display_init_board();
-    init_to_display();
-    
-    
-//    test_drawing_player();
-    sign = 1;
-    //need to read in a board scenario to check if it works
-    read_in();
-    decide_3(x,y);
-    //TODO:test code
-            RecordBoard[x][y] = sign;    
-        	    record_to_display();
-	    display_display_board();
-/*	record_to_display();
-	display_display_board();  
-	  
-    decide_2(sign);
-        latest.dim1 = x;
-        latest.dim2 = y;
-        RecordBoard[x][y] = sign;    
-        	    record_to_display();
-	    display_display_board();
-	    goodbye:
-/*
-    while(1){
-        decide_1();
-        latest.dim1 = x;
-        latest.dim2 = y;
-        RecordBoard[x][y] = sign;
-        if(five_in_row(&latest, RecordBoard)){
-            printf("player %d wins!\n",sign);
-            break;
+void fdisplay(){
+    FILE * one_game;
+    one_game = fopen("games.txt","a+");
+    int i,j;
+    for(i = 0; i < BOARD_LEN; i++){
+        for(j = 0; j < DISPLAY_CHAR_WIDTH; j++){
+            fprintf(one_game,"%c",display_board[i][j]);
         }
-	    record_to_display();
-	    display_display_board();
-	    sign = 3 - sign;
-	}
-	*/
-	return 0;
+        fprintf(one_game,"\n");
+    }
+    fclose(one_game);    
 }
+void fdisplay_path(int i, int j){
+    FILE * one_game;
+    one_game = fopen("games.txt","a+");
+}
+

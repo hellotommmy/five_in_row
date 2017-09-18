@@ -2,24 +2,26 @@
 
 void read_in(){
 FILE *fp;
-int ret;
-int i,j,player;
+int i;
 char dim2;
 fp = fopen("state2.txt","r+");
-player = 1;
+sign = 1;
 while(fscanf(fp,"%d %c", &i, &dim2) != EOF){
-    i = 15 - i;
-    j = dim2 - 'A';
-    RecordBoard[i][j] = player;
-    player = 3 - player;
+    if( i == 16)
+        break;
+    x = 15 - i;
+    y = dim2 - 'A';
+    RecordBoard[x][y] = sign;
+    sign = 3 - sign;
+    record_to_display();
+    fdisplay();
+	//display_display_board();
+}
+    //printf("player%d i%d j%d\n",player,i,j);
+    //x = i;
+    //y = j;
     record_to_display();
 	display_display_board();
-	//sleep(0.1);
-}
-    sign = player;
-    printf("player%d i%d j%d\n",player,i,j);
-    x = i;
-    y = j;
     fclose(fp);
 }
     

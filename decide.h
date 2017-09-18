@@ -2,7 +2,7 @@
 #define DECIDE_H
 #include "comm.h"
 #include "node.h"
-#define DEPTH 5
+#define DEPTH 6
 int step_taken1,step_taken2;
 int minmax(node_t *node, int depth, int maxPlayer);
 void board_to_node(char board[BOARD_LEN][BOARD_LEN], node_t *node);
